@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Thangomeyy 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  background:#fff;
+  font-family:'Arial',sans-serif;
+  text-align:center;
+  padding:20px;
+  color:#000;
+  font-weight:600;
+}
+
+.card{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
+
+h1{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+img{
+  width:100%;
+  max-width:280px;
+  border-radius:14px;
+  margin:15px 0;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+button{
+  padding:12px 20px;
+  font-size:16px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.yes{
+  background:#ffb6c1;
+}
+
+.no{
+  background:#ddd;
+  position:relative;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Hey Thangomeyy 💗</h1>
+  <p>Ready for a tiny love test? 🤌🏻</p>
+  <img src="https://media.tenor.com/7JtZ6GdFjDkAAAAC/mocha-mochi-peach-cat-love.gif">
+  <div class="buttons">
+    <button class="yes" onclick="nextStep()">Yes</button>
+    <button class="no" onmouseover="moveNo(this)">No</button>
+  </div>
+</div>
+
+<script>
+let step = 0;
+
+function moveNo(btn){
+  btn.style.left = Math.random()*120 - 60 + "px";
+  btn.style.top  = Math.random()*120 - 60 + "px";
+  alert("Wrong answer Thangomeyy 😌 Try again 💗");
+}
+
+function nextStep(){
+  const card = document.getElementById("card");
+
+  if(step === 0){
+    card.innerHTML = `
+      <h1>You are my lucky charm 💯</h1>
+      <p>Life feels right only with you 🫂♾️</p>
+      <img src="https://media.tenor.com/2roX3uxz_68AAAAC/mocha-peach-cat-hug.gif">
+      <div class="buttons">
+        <button class="yes" onclick="nextStep()">Yes</button>
+        <button class="no" onmouseover="moveNo(this)">No</button>
+      </div>`;
+  }
+
+  else if(step === 1){
+    card.innerHTML = `
+      <h1>Without you, I’m incomplete 🤍</h1>
+      <p>You are my today, tomorrow & forever ♾️</p>
+      <img src="https://media.tenor.com/5n8x0oP3xKcAAAAC/mocha-mochi-peach-love.gif">
+      <div class="buttons">
+        <button class="yes" onclick="nextStep()">Yes</button>
+        <button class="no" onmouseover="moveNo(this)">No</button>
+      </div>`;
+  }
+
+  else if(step === 2){
+    card.innerHTML = `
+      <h1>So my Thangomeyy 💗</h1>
+      <p>Will you be my Valentine? 🫂♾️</p>
+      <img src="https://media.tenor.com/I2K5bQ5s2LEAAAAC/mocha-peach-cat-kiss.gif">
+      <div class="buttons">
+        <button class="yes" onclick="finalYes()">YES 🤌🏻💗</button>
+        <button class="no" onmouseover="moveNo(this)">No</button>
+      </div>`;
+  }
+
+  step++;
+}
+
+function finalYes(){
+  document.getElementById("card").innerHTML = `
+    <h1>You said YES 💯💗</h1>
+    <p>Forever starts now, my Thangomeyy 🫂♾️</p>
+    <img src="https://media.tenor.com/2x8C6J9t6N8AAAAC/mocha-peach-cat-love-you.gif">
+  `;
+}
+</script>
+
+</body>
+</html>
